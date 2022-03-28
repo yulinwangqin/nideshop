@@ -1,13 +1,13 @@
 FROM node:12-slim
 
-WORKDIR /usr/src/shop
-COPY package.json /usr/src/shop/package.json
+WORKDIR /usr/src/app
+COPY package.json /usr/src/app/package.json
 RUN npm install --only=production
 
-COPY src /usr/src/shop/src
-COPY www /usr/src/shop/www
-COPY production.js /usr/src/shop/production.js
+COPY src /usr/src/app/src
+COPY www /usr/src/app/www
+COPY production.js /usr/src/app/production.js
 
 ENV DOCKER=true
 EXPOSE 8360
-CMD [ "node", "/usr/src/shop/production.js" ]
+CMD [ "node", "/usr/src/app/production.js" ]
