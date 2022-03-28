@@ -2,7 +2,7 @@ FROM node:12-slim
 
 WORKDIR /usr/src/shop
 COPY package.json /usr/src/shop/package.json
-RUN npm i --production --registry=https://registry.npm.taobao.org
+RUN npm install --only=production
 
 COPY src /usr/src/shop/src
 COPY view /usr/src/shop/view
